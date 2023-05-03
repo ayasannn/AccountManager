@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,11 +19,13 @@ public class LoginController {
 	public String showView() {
 		return "login";
 	}
-	@PostMapping("AccountManager")
-	public String loginView(@Validated InsertForm form, BindingResult bindingResult, Model model) {
+	@PostMapping("home")
+	public String loginView(@Validated InsertForm form, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
 			return "login";
 		}
 		return "home";
 	}
 }
+
+
