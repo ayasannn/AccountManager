@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th ="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ログイン画面</title>
 </head>
 <body>
-
+	<form th:action ="@{/home}" method ="post" th:object ="${insertForm}">
+	
+	<div>
+		<input type ="text" th:field ="*{mail}">
+		<input type ="text" th:field ="*{pass}">
+	</div>
+	
+	<input type ="submit" value ="ログイン">
+	
+	<!--エラーの表示-->
+	<ul th:if ="${#fields.hasErrors('*')}">
+		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
+		
 </body>
 </html>
