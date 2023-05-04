@@ -22,5 +22,4 @@ public class MultiValidator implements Validator {
 			errors.reject("demo.MultiValidator.bothBlank");
 		}
 	}
-
 }

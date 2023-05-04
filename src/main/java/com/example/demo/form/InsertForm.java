@@ -10,12 +10,12 @@ public class InsertForm {
 
 	@Pattern(regexp="^([\\w])+([\\w\\._\\-])*@([\\w])+([\\w\\._-])*\\.([a-zA-Z])+$",
 			message = "正しいメールアドレスを入力してください。")
-	@NotBlank(message = "未入力です。")//OK
+	@NotBlank(message = "メールアドレスが未入力です。")//OK
 	private String mail;
 	
 	@Pattern(regexp="^([\\w\\._\\-\\+])*$",
 			message ="入力できない文字があります。")
-	@NotBlank(message = "未入力です。")//OK
+	@NotBlank(message = "パスワードが未入力です。")//OK
 	@Size(min = 6, max = 12, message = "パスワードは6～12文字です。")
 	private String pass;
 }
