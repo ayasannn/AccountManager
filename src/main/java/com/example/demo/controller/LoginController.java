@@ -15,6 +15,8 @@ import com.example.demo.validator.MultiValidator;
 
 @Controller
 public class LoginController {
+	
+	
 	@ModelAttribute
 	public InsertForm setUpForm() {
 		return new InsertForm();

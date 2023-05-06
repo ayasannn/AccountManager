@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body{
+	/*↓背景透明にする。0.0 ~ 1.0の範囲*/
+	opacity:0.2;
+	margin : auto;
+	width : 50px;
+	background: #000080;
+}
