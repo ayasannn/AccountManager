@@ -8,8 +8,8 @@
 	<form th:action ="@{/home}" method ="post" th:object ="${insertForm}">
 	
 	<div>
-		<input type ="text" th:field ="*{mail}">
-		<input type ="text" th:field ="*{pass}">
+		メールアドレス：<input type ="text" th:field ="*{mail}">
+		パスワード：<input type ="text" th:field ="*{pass}">
 	</div>
 	
 	<input type ="submit" value ="ログイン">
