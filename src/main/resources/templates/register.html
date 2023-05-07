@@ -7,20 +7,22 @@
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
-	<div>
-	<h2 class ='title'>新規会員登録をしよう！</h2>
-	</div>
-	<form th:action ="@{/newmember}" method ="post" th:object ="${insertForm}">
-	<div>
-		<input type ="text" th:field ="*{mail}">
-		<input type ="text" th:field ="*{pass}">
-	</div>
+	<div class = "box">
+		<div class="header">
+		<h2>新規会員登録をしよう！</h2>
+		</div>
+		<form th:action ="@{/newmember}" method ="post" th:object ="${insertForm}">
+			<div>
+			<input type ="text" th:field ="*{mail}">
+			<input type ="text" th:field ="*{pass}">
+			</div>
 	
-	<input type ="submit" value ="登録">
+		<input type ="submit" value ="登録">
 	
 	<!--エラーの表示-->
-	<ul th:if ="${#fields.hasErrors('*')}">
+		<ul th:if ="${#fields.hasErrors('*')}">
 		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
 		
+	</div>
 </body>
 </html>
