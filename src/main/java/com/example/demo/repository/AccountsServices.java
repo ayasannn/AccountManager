@@ -1,15 +1,32 @@
 package com.example.demo.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional(rollbackFor = Exception.class)
 public class AccountsServices {
 	
 	@Autowired
 	AccountsCrudRepository acr;
 	
-//	//新規会員登録用
-//	private void executeInsert(String mail, Date birth, String pass) {
-//		Accounts ac = new Accounts(null, mail, birth, pass);
-//		ac = acr.save(ac);
-//	}
+	public List<AccountsEntity> serch(Accounts ac){
+		List<AccountsEntity> mailList = new ArrayList<>();
+		var aEnt = new AccountsEntity();
+		aEnt.setMail(ac.getMail());
+		mailList = acr.findByMail(aEnt.getMail());
+		return mailList;
+	}
+	
+	public void save(Accounts acc) {
+		var aEnt = new AccountsEntity();
+		aEnt.setMail(acc.getMail());
+		aEnt.setBirth(acc.getBirth());
+		aEnt.setPassword(acc.getPassword());
+		acr.save(aEnt);
+	}
 }

@@ -1,18 +1,16 @@
 @charset "UTF-8";
 
-body{
+.backgr{
 	/*↓背景透明にする。0.0 ~ 1.0の範囲*/
-	opacity:0.1;
 	margin : auto;
-	background: rgb(128, 255, 255);
 }
 
 .box{
 	border: black 1px solid;/*境界線*/
-	box-shadow : 0px 0px 15px 0px rgba(98,98,98,0.8);
-	padding : 10px;
-}
+	box-shadow : 0px 0px 15px 0px rgba(98,98,98,0.9);
+	width : 470px;
+	padding : 100px;
+	text-align : center;
+	margin :auto;
+	}
 
-h2{/*新規会員登録をしよう！の文字の装飾のみ考慮*/
-	
-}

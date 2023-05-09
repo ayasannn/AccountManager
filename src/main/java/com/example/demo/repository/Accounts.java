@@ -1,22 +1,17 @@
 package com.example.demo.repository;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import org.springframework.data.annotation.Id;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Accounts {
+public class Accounts implements Serializable{
 	
-	@Id
-	private Integer id;
 	private String mail;
+	
 	private Date birth;
+	
 	private String password;
 	
 }

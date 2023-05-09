@@ -7,13 +7,20 @@
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
+<div class="backgr">
 	<div class = "box">
 		<div class="header">
 		<h2>新規会員登録をしよう！</h2>
 		</div>
-		<form th:action ="@{/newmember}" method ="post" th:object ="${insertForm}">
+		<form th:action ="@{/newmember}" method ="post" th:object ="${registerForm}">
 			<div>
+			<span>メールアドレス :</span><br>
 			<input type ="text" th:field ="*{mail}">
+			<br>
+			<span>生年月日 :</span><br>
+			<input type ="date" th:field ="*{birth}">
+			<br>
+			<span>パスワード :</span><br>
 			<input type ="text" th:field ="*{pass}">
 			</div>
 	
@@ -24,5 +31,6 @@
 		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
 		
 	</div>
+</div>
 </body>
 </html>

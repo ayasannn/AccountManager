@@ -1,28 +1,27 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.form.InsertForm;
+import com.example.demo.form.RegisterForm;
+import com.example.demo.repository.Accounts;
+import com.example.demo.repository.AccountsServices;
 
 @Controller
 public class RegisterController {
 	
+	@Autowired
+	AccountsServices acs;
+	
 	
 	@ModelAttribute
-	public InsertForm from() {
-		return new InsertForm();
-	}
-	
-	@RequestMapping("/css")
-	public String withCssView(Model model) {
-		return "css";
+	public RegisterForm rFrom() {
+		return new RegisterForm();
 	}
 	
 	@GetMapping("register")
@@ -31,11 +30,29 @@ public class RegisterController {
 	}
 	
 	@PostMapping("newmember")
-	public String loginView(@Validated InsertForm form, BindingResult bindingResult) {
+	public String loginView(@Validated RegisterForm rForm, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
+			System.out.println("バリデーション通ってる。");
 			return "register";
 		}
-		return "submitted";
+//		model 処理→DBで過去に登録されていないことを確認
+//		NG→select mail from accounts →　１件以上
+//		→registerに戻る。
+		
+		var acc = new Accounts();
+		acc.setMail(rForm.getMail());
+		acc.setBirth(rForm.getBirth());
+		acc.setPassword(rForm.getPass());
+//		List<AccountsEntity> lst = acs.findByMail( rForm.getMail()) ;
+		System.out.println("アカウント承認を通ってる");
+		if (!acs.serch(acc).isEmpty()) {
+			System.out.println("からっぽじゃない");
+			acs.serch(acc).forEach(System.out::print);
+			return "register";
+		} else {
+			System.out.println("からっぽの時");
+			acs.save(acc);
+			return "submitted";
+		}
 	}
-
 }
