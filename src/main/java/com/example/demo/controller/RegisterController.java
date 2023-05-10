@@ -17,7 +17,7 @@ public class RegisterController {
 	
 	@Autowired
 	AccountsServices acs;
-	
+	Accounts acc;
 	
 	@ModelAttribute
 	public RegisterForm rFrom() {
@@ -39,7 +39,7 @@ public class RegisterController {
 //		NG→select mail from accounts →　１件以上
 //		→registerに戻る。
 		
-		var acc = new Accounts();
+		acc = new Accounts();
 		acc.setMail(rForm.getMail());
 		acc.setBirth(rForm.getBirth());
 		acc.setPassword(rForm.getPass());
@@ -51,8 +51,19 @@ public class RegisterController {
 			return "already";
 		} else {
 			System.out.println("からっぽの時");
-			acs.save(acc);
-			return "submitted";
+
+			return "check";
 		}
+	}
+	
+	@PostMapping("check")
+	public String confirmView() {
+		return "submit";
+	}
+	
+	@PostMapping("submitted")
+	public String submittedView() {
+		acs.save(acc);
+		return "submitted";
 	}
 }
