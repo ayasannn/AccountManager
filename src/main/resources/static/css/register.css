@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.backgr{
+	/*↓背景透明にする。0.0 ~ 1.0の範囲*/
+	margin : auto;
+}
+
+.box{
+	border: black 1px solid;/*境界線*/
+	box-shadow : 0px 0px 15px 0px rgba(98,98,98,0.9);
+	width : 470px;
+	padding : 100px;
+	text-align : center;
+	margin :auto;
+	}
+
