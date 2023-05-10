@@ -42,7 +42,7 @@ public class LoginController {
 		acc.setPassword(form.getPass());
 		System.out.println("バリデーションOK!");
 		if(acs.findAccount(acc).isEmpty()) {
-			return "login";
+			return "mistaken";
 		}else {
 			return "home";
 		}
