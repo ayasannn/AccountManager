@@ -6,28 +6,41 @@
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
-<div class="backgr">
 	<div class = "box">
 	<img src ="img/Twitterオマージュねこ小.png">
 		<div class="header">
 		<h2>ログインページ</h2>
 		</div>
-	<form th:action ="@{/home}" method ="post" th:object ="${insertForm}">
+			<form th:action ="@{/home}" method ="post" th:object ="${insertForm}">
 	
-	<div>
-		<p>メールアドレス：<input type ="text" th:field ="*{mail}"></p>
-		<p>パスワード：<input type ="text" th:field ="*{pass}"></p>
-	</div>
+			<table border="1">
+				<!--1行目！！！！！！-->
+					<tr>
+						<td>
+							メールアドレス
+						</td>
+						<td>
+						<input type ="text" th:field ="*{mail}">
+						</td>
+					</tr>
+				<!--2行目！！！！-->
+					<tr>
+						<td>
+							パスワード
+						</td>
+						<td>
+							<input type ="password" th:field ="*{pass}">
+						</td>
+					</tr>
+			</table>
+			<div class="button"><input type ="submit" value ="ログイン"></div>
 	
-	<input type ="submit" value ="ログイン">
-	
-	<p>新規登録は<a href ="register">こちら</a>から</p>
+			<p>新規登録は<a href ="register">こちら</a>から</p>
 	
 	
-	<!--エラーの表示-->
-	<ul th:if ="${#fields.hasErrors('*')}">
-		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
+			<!--エラーの表示-->
+			<ul th:if ="${#fields.hasErrors('*')}">
+			<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
 	</div>	
-</div>
 </body>
 </html>

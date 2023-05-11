@@ -19,6 +19,7 @@ public class RegisterController {
 	AccountsServices acs;
 	Accounts acc;
 	
+	
 	@ModelAttribute
 	public RegisterForm rFrom() {
 		return new RegisterForm();
