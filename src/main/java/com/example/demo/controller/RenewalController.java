@@ -1,16 +1,18 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.form.RenewalForm;
 import com.example.demo.repository.Accounts;
 import com.example.demo.repository.AccountsServices;
 
+@Controller
 public class RenewalController {
 
 	@Autowired
@@ -22,7 +24,7 @@ public class RenewalController {
 		return new RenewalForm();
 	}
 	
-	@GetMapping("renewal")
+	@RequestMapping("renewal")
 	public String showView() {
 		return "renewal";
 	}
@@ -48,6 +50,11 @@ public class RenewalController {
 	
 	@PostMapping("finalanswer")
 	public String finalanswerView() {
+		return "resetcomplete";
+	}
+	
+	@PostMapping("resetcomplete")
+	public String resetView() {
 		acs.save(acc);
 		return "resetcomplete";
 	}
