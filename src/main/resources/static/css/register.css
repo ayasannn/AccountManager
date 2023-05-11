@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-.backgr{
-	/*↓背景透明にする。0.0 ~ 1.0の範囲*/
-	margin : auto;
+body{
+	background-color: #999999;
 }
 
 .box{
@@ -12,5 +11,6 @@
 	padding : 100px;
 	text-align : center;
 	margin :auto;
+	margin-top :60px;
+	background-color: white;
 	}
-
