@@ -3,11 +3,6 @@ body{
 	background-color: #999999;
 }
 
-table{
-	/*テーブルはtext-align : centerで動かないので注意。*/
-	margin : auto;
-}
-
 .box{
 	border: black 1px solid;/*境界線*/
 	box-shadow : 0px 0px 15px 0px rgba(98,98,98,0.9);
@@ -15,5 +10,11 @@ table{
 	padding : 100px;
 	text-align : center;
 	margin :auto;
+	margin-top :60px;
 	background-color : white;
+}
+
+table{
+	/*テーブルはtext-align : centerで動かないので注意。*/
+	margin : auto;
 }

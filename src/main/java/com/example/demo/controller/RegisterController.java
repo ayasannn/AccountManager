@@ -59,7 +59,7 @@ public class RegisterController {
 	
 	@PostMapping("check")
 	public String confirmView() {
-		return "submit";
+		return "submitted";
 	}
 	
 	@PostMapping("submitted")

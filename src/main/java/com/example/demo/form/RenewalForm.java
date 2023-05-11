@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -25,4 +26,10 @@ public class RenewalForm {
 	@Past(message = "過去の日付を選択してください。")
 	@NotNull(message = "生年月日を入力してください。")
 	private Date birth;
+	
+	@Pattern(regexp = "^([\\w\\._\\-\\+])*$",
+			message = "入力できない文字があります。")
+	@NotBlank(message = "パスワードが未入力です。")//OK
+	@Size(min = 6, max = 12, message = "パスワードは6～12文字です。")
+	private String pass;
 }

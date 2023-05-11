@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン画面</title>
+<link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
+<div class="backgr">
+	<div class = "box">
+		<div class="header">
+		<h2>ログインページ</h2>
+		</div>
 	<form th:action ="@{/home}" method ="post" th:object ="${insertForm}">
 	
 	<div>
-		メールアドレス：<input type ="text" th:field ="*{mail}">
-		パスワード：<input type ="text" th:field ="*{pass}">
+		<p>メールアドレス：<input type ="text" th:field ="*{mail}"></p>
+		<p>パスワード：<input type ="text" th:field ="*{pass}"></p>
 	</div>
 	
 	<input type ="submit" value ="ログイン">
@@ -20,6 +26,7 @@
 	<!--エラーの表示-->
 	<ul th:if ="${#fields.hasErrors('*')}">
 		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
-		
+	</div>	
+</div>
 </body>
 </html>

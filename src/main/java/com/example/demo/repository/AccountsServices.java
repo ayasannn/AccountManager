@@ -27,6 +27,12 @@ public class AccountsServices {
 		
 	}
 	
+	public List<AccountsEntity> findMailAndBirth(Accounts ac) {
+		List<AccountsEntity> mpList = new ArrayList<>();
+		mpList = acr.findByMailAndBirth(ac.getMail(), ac.getBirth());
+		return mpList;
+	}
+	 
 	public void save(Accounts acc) {
 		var aEnt = new AccountsEntity();
 		aEnt.setMail(acc.getMail());
