@@ -1,6 +1,10 @@
 package com.example.demo.form;
 
-import java.sql.Date;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -15,6 +19,8 @@ public class RegisterForm{
 	@NotBlank(message = "メールアドレスが未入力です。")//OK
 	private String mail;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date birth;
 	
 	@Pattern(regexp="^([\\w\\._\\-\\+])*$",
@@ -22,4 +28,5 @@ public class RegisterForm{
 	@NotBlank(message = "パスワードが未入力です。")//OK
 	@Size(min = 6, max = 12, message = "パスワードは6～12文字です。")
 	private String pass;
+
 }

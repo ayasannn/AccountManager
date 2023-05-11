@@ -7,10 +7,9 @@
 <body>
 	<form th:action ="@{/submitted}" method ="post" th:object ="${registerForm}">
 	
-	<p th:text="|メールアドレス	:*{mail}|"></p>	
-	<p th:text="|生年月日		:*{birth}|"><p/>
+	<p th:text="|メールアドレス	:*{mail}|"></p>
+	<p th:text="|生年月日		:*{#dates.format(birth, 'yyyy年MM月dd日')}|"></p>
 	<p th:text="|パスワード		:*パスワードは背後に人がいるので表示されません。*|"></p>
-	
 	
 		<input type ="submit" value ="登録">
 </body>

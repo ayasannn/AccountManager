@@ -14,16 +14,35 @@
 		<h2>新規会員登録をしよう！</h2>
 		</div>
 		<form th:action ="@{/newmember}" method ="post" th:object ="${registerForm}">
-			<div>
-			<span>メールアドレス :</span><br>
-			<input type ="text" th:field ="*{mail}">
-			<br>
-			<span>生年月日 :</span><br>
-			<input type ="date" th:field ="*{birth}">
-			<br>
-			<span>パスワード :</span><br>
-			<input type ="password" th:field ="*{pass}">
-			</div>
+			<table border="1">
+			<!--1行目！！！！！！-->
+				<tr>
+					<td id="tdheader">
+						メールアドレス
+					</td>
+					<td>
+					<input type ="text" th:field ="*{mail}">
+					</td>
+				</tr>
+			<!--2行目！！！！！！-->
+				<tr>
+					<td id="tdheader">
+						生年月日
+					</td>
+					<td>
+						<input type ="date" th:field ="*{birth}">
+					</td>
+				</tr>
+			<!--3行目！！！！-->
+				<tr>
+					<td id="tdheader">
+						パスワード
+					</td>
+					<td>
+						<input type ="password" th:field ="*{pass}">
+					</td>
+				</tr>
+			</table>
 	
 		<input type ="submit" value ="登録">
 	

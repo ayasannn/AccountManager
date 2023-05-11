@@ -1,7 +1,10 @@
 @charset "UTF-8";
+body{
+	background-color: #999999;
+}
 
-.backgr{
-	/*↓背景透明にする。0.0 ~ 1.0の範囲*/
+table{
+	/*テーブルはtext-align : centerで動かないので注意。*/
 	margin : auto;
 }
 
@@ -12,5 +15,5 @@
 	padding : 100px;
 	text-align : center;
 	margin :auto;
-	}
-
+	background-color : white;
+}
