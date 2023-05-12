@@ -6,7 +6,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.form.RenewalForm;
 import com.example.demo.repository.Accounts;
@@ -24,7 +23,7 @@ public class RenewalController {
 		return new RenewalForm();
 	}
 	
-	@RequestMapping("renewal")
+	@PostMapping("renewal")
 	public String showView() {
 		return "renewal";
 	}
