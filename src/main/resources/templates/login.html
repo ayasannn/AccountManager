@@ -41,6 +41,7 @@
 			<!--エラーの表示-->
 			<ul th:if ="${#fields.hasErrors('*')}">
 			<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
+			</ul>
 	</div>	
 </body>
 </html>

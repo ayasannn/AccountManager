@@ -40,7 +40,7 @@ public class RenewalController {
 		acc.setPassword(rnForm.getPass());
 		//空っぽの時＝メールと誕生日不一致
 		if(acs.findMailAndBirth(acc).isEmpty()) {
-			return "renewal";
+			return "mismatchmb";
 		} else {
 			
 		return "finalanswer";
