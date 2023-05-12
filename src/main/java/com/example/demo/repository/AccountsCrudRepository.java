@@ -13,5 +13,6 @@ public interface AccountsCrudRepository extends CrudRepository<AccountsEntity, I
 	public List<AccountsEntity> findByMail(String mail);
 	public List<AccountsEntity> findByMailAndBirth(String mail, Date birth);
 	public List<AccountsEntity> findByMailAndPassword(String mail, String password);
+
 	
 }

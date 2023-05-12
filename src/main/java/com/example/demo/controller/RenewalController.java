@@ -55,7 +55,7 @@ public class RenewalController {
 	
 	@PostMapping("resetcomplete")
 	public String resetView() {
-		acs.save(acc);
+		acs.updatePass(acc, acs.findMailAndBirth(acc));
 		return "resetcomplete";
 	}
 }

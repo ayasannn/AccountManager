@@ -40,4 +40,13 @@ public class AccountsServices {
 		aEnt.setPassword(acc.getPassword());
 		acr.save(aEnt);
 	}
+	
+	public void updatePass(Accounts acc, List<AccountsEntity> aeList) {
+		var acEnt = new AccountsEntity();
+		acEnt.setId(aeList.get(0).getId());
+		acEnt.setMail(aeList.get(0).getMail());
+		acEnt.setBirth(aeList.get(0).getBirth());
+		acEnt.setPassword(acc.getPassword());
+		acr.save(acEnt);
+	}
 }
