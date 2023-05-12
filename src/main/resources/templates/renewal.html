@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>パスワード再発行</title>
+<link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
+	<div class = "box">
+	<img src ="img/Twitterオマージュねこ小.png">
 	<form th:action ="@{/remakepass}" method="post" th:object ="${renewalForm}">
+		<h6>パスワードを忘れてしまったどんくさいあなたのための再設定ページ</h6>
 				<table border="1">
 			<!--1行目！！！！！！-->
 				<tr>
@@ -36,10 +40,11 @@
 				</tr>
 			</table>
 	
-		<input type ="submit" value ="パスワード再発行">
+		<div class="button"><input type ="submit" value ="パスワード再発行"></div>
 	
 	<!--エラーの表示-->
 		<ul th:if ="${#fields.hasErrors('*')}">
 		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
+</div>
 </body>
 </html>

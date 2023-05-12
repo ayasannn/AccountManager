@@ -7,9 +7,8 @@
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
-
-<div class="backgr">
 	<div class = "box">
+		<img src ="img/Twitterオマージュねこ小.png">
 		<div class="header">
 		<h2>新規会員登録をしよう！</h2>
 		</div>
@@ -44,14 +43,12 @@
 				</tr>
 			</table>
 	
-		<input type ="submit" value ="登録">
+		<div class="button"><input type ="submit" value ="登録"></div>
 	
 	<!--エラーの表示-->
 		<ul th:if ="${#fields.hasErrors('*')}">
 		<li th:each ="err:${#fields.errors('*')}" th:text ="${err}"></li>
-		
 	</div>
-</div>
 
 </body>
 </html>

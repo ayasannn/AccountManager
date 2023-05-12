@@ -3,14 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>確認画面</title>
+<link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
+	<div class = "box">
+	<img src ="img/Twitterオマージュねこ小.png">
 	<form th:action ="@{/submitted}" method ="post" th:object ="${registerForm}">
+	
+	<h1>以下の情報で登録します。<br>よろしいですか？</h1>
 	
 	<p th:text="|メールアドレス	:*{mail}|"></p>
 	<p th:text="|生年月日		:*{#dates.format(birth, 'yyyy年MM月dd日')}|"></p>
-	<p th:text="|パスワード		:*パスワードは背後に人がいるので表示されません。*|"></p>
+	<p th:text="|パスワード		:*セキュリティの為パスワードは表示されません*|"></p>
 	
-		<input type ="submit" value ="登録">
+		<div class="button"><input type ="submit" value ="登録"></div>
+	</div>
 </body>
 </html>
