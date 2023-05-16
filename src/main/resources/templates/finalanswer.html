@@ -2,17 +2,17 @@
 <html xmlns:th ="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>パスワード上書きするで？</title>
+<title>会員登録</title>
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
 	<div class = "box">
-	<img src ="img/Twitterオマージュねこ小.png">
-	<form th:action ="@{/resetcomplete}" method ="post" th:object ="${renewalForm}">
-	
-	<p th:text="|メールアドレス	:*{mail}|"></p>
-	<p th:text="|生年月日		:*{#dates.format(birth, 'yyyy年MM月dd日')}|"></p>
-	<p th:text="|パスワード		:*パスワードは背後に人がいるので表示されません。*|"></p>
+		<img src ="img/Twitterオマージュねこ小.png">
+		<h2>この情報で登録してもよろしいですか？</h2>
+		<form th:action ="@{/resetcomplete}" method ="post" th:object ="${renewalForm}">
+		<p th:text="|メールアドレス	:*{mail}|"></p>
+		<p th:text="|生年月日		:*{#dates.format(birth, 'yyyy年MM月dd日')}|"></p>
+		<p th:text="|パスワード		:*セキュリティの為パスワードは表示されません*|"></p>
 	
 		<input type ="submit" value ="リセット">
 	</div>

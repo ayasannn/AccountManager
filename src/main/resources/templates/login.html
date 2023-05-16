@@ -2,7 +2,7 @@
 <html xmlns:th ="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>ログイン画面</title>
+<title>ログイン</title>
 <link th:href="@{/css/register.css}" rel="styleSheet">
 </head>
 <body>
@@ -34,9 +34,11 @@
 					</tr>
 			</table>
 			<div class="button"><input type ="submit" value ="ログイン"></div>
-	
-			<p>新規登録は<a href ="register">こちら</a>から</p>
-	
+			
+			<div class ="link">
+			<p>新規登録は<a href ="register">こちら</a></p>
+			<p>パスワードをお忘れの方は<a href ="renewal">こちら</a></p>
+			</div>
 	
 			<!--エラーの表示-->
 			<ul th:if ="${#fields.hasErrors('*')}">

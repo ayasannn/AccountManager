@@ -10,7 +10,7 @@
 	<img src ="img/Twitterオマージュねこ小.png">
 	<form th:action ="@{/submitted}" method ="post" th:object ="${registerForm}">
 	
-	<h1>以下の情報で登録します。<br>よろしいですか？</h1>
+	<h2>以下の情報で登録します。<br>よろしいですか？</h2>
 	
 	<p th:text="|メールアドレス	:*{mail}|"></p>
 	<p th:text="|生年月日		:*{#dates.format(birth, 'yyyy年MM月dd日')}|"></p>

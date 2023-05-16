@@ -47,12 +47,9 @@ public class RegisterController {
 //		List<AccountsEntity> lst = acs.findByMail( rForm.getMail()) ;	この書き方でも◎
 		System.out.println("アカウント承認を通ってる");
 		if (!acs.serch(acc).isEmpty()) {
-			System.out.println("からっぽじゃない");
 			acs.serch(acc).forEach(System.out::print);
 			return "already";
 		} else {
-			System.out.println("からっぽの時");
-
 			return "check";
 		}
 	}
